@@ -14,8 +14,8 @@ public class NavigationHelper extends HelperBase {
   }
 
   public void returnHomePage() {
-    click(By.xpath("//div[@id='content']/form/input[21]"));
-    click(By.linkText("home page"));
+   // click(By.xpath("//div[@id='content']/form/input[21]"));
+    click(By.linkText("home"));
   }
 
 }
