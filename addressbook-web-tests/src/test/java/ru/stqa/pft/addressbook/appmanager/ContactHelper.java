@@ -14,6 +14,10 @@ public class ContactHelper extends HelperBase {
     super (wd);
   }
 
+  public void returnToContactPage() {
+    click(By.linkText("home"));
+  }
+
   public void submitContactCreation() {
     click(By.xpath("//div[@id='content']/form/input[21]"));
   }
@@ -50,4 +54,16 @@ public class ContactHelper extends HelperBase {
   public void selectModificationContact() {click(By.xpath("//img[@alt='Edit']"));}
 
   public void updateModificationContact() {click(By.xpath("//div[@id='content']/form/input[22]"));}
+
+  public void createContact(ContactData contactData, boolean b) {
+    initContactCreation();
+    fillContactForm(new ContactData("Maria", "Rogovskaya", "+79058075659",
+        "mtishinskikh@mail.ru", "test1"), true);
+    submitContactCreation();
+    returnToContactPage();
+  }
+
+  public boolean isThereAContact() {
+    return isElementPresent(By.xpath("//table[@id='maintable']/tbody/tr[2]/td/input"));
+  }
 }

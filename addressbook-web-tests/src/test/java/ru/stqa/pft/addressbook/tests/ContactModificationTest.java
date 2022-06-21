@@ -14,6 +14,10 @@ public class ContactModificationTest extends TestBase {
   @Test
   public void testContactModification() throws Exception {
     app.getNavigationHelper().returnHomePage();
+    if (! app.getContactHelper().isThereAContact()) {
+      app.getContactHelper().createContact(new ContactData("Maria",
+          "Rogovskaya", "+79058075659", "mtishinskikh@mail.ru", "test1"), true);
+    }
     app.getContactHelper().selectModificationContact();
     app.getContactHelper().fillContactForm(new ContactData("Семён", "Роговский", "+79221140175", "stilod@mail.ru", null), false);
     app.getContactHelper().updateModificationContact();
