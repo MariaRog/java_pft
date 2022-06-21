@@ -15,7 +15,7 @@ public class ContactModificationTest extends TestBase {
   public void testContactModification() throws Exception {
     app.getNavigationHelper().returnHomePage();
     app.getContactHelper().selectModificationContact();
-    app.getContactHelper().fillContactForm(new ContactData("Семён", "Роговский", "+79221140175", "stilod@mail.ru"));
+    app.getContactHelper().fillContactForm(new ContactData("Семён", "Роговский", "+79221140175", "stilod@mail.ru", null), false);
     app.getContactHelper().updateModificationContact();
     app.getNavigationHelper().returnHomePage();
   }
