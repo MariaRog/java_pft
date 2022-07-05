@@ -7,6 +7,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
+import ru.stqa.pft.addressbook.model.GroupData;
+
+import static java.rmi.activation.ActivationGroup.createGroup;
 
 public class ContactHelper extends HelperBase {
 
@@ -55,7 +58,7 @@ public class ContactHelper extends HelperBase {
 
   public void updateModificationContact() {click(By.xpath("//div[@id='content']/form/input[22]"));}
 
-  public void createContact(ContactData contactData, boolean b) {
+  public void createContact(ContactData contactData) {
     initContactCreation();
     fillContactForm(new ContactData("Maria", "Rogovskaya", "+79058075659",
         "mtishinskikh@mail.ru", "test1"), true);
